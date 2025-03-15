@@ -24,7 +24,7 @@
   
       span {
         margin-left: 10px;
-        color: #2d7c44;
+        color: rgba(36, 36, 36, 1);
         font-weight: bold;
       }
     }
@@ -48,12 +48,16 @@
         flex-grow: 1;
         
         .user-name {
-          font-weight: bold;
+          // font-weight: bold;
+          font-weight: 400;
+          font-size: 14px;
+          color: rgba(36, 36, 36, 1)
         }
   
         .user-role {
-          color: gray;
-          font-size: 14px;
+          font-weight: 400;
+          font-size: 12px;
+          color:rgba(66, 66, 66, 1)
         }
       }
   
@@ -67,22 +71,32 @@
     .import-section {
       h2 {
         margin-bottom: 5px;
+        font-weight: 600;
+        font-size: 20px;
+        color:rgba(36, 36, 36, 1)
+      }
+      p {
+        
+        font-weight: 400;
+        font-size: 14px;
+        color:rgba(66, 66, 66, 1);
       }
   
       .import-btn {
         display: flex;
         align-items: center;
-        background: #2d5fcc;
+        background:rgba(41, 92, 183, 1);
         color: white;
         border: none;
         padding: 10px;
         border-radius: 5px;
         cursor: pointer;
+        justify-content: center;
         width: 100%;
         margin: 10px 0;
-        font-size: 16px;
-        font-weight: bold;
-        
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
         img {
           width: 20px;
           margin-right: 10px;
@@ -93,14 +107,15 @@
         display: flex;
         align-items: center;
         background: #f0f0f0;
-        color: black;
+        color: rgba(0, 0, 0, 1);
         border: none;
+        justify-content: center;
         padding: 10px;
         border-radius: 5px;
         cursor: pointer;
         width: 100%;
         font-size: 16px;
-        font-weight: bold;
+        font-weight: 600;
   
         img {
           width: 18px;
@@ -109,9 +124,11 @@
       }
   
       .last-update {
-        font-size: 14px;
-        color: gray;
-        margin-top: 5px;
+        font-size: 12px;
+        color: rgba(66, 66, 66, 1);
+        margin-top: 10px;
+        text-align: center;
+
       }
     }
   
@@ -120,10 +137,15 @@
   
       h2 {
         margin-bottom: 5px;
+        font-weight: 600;
+  font-size: 20px;
+  color: rgba(36, 36, 36, 1);
       }
   
       p {
-        color: gray;
+        font-weight: 400;
+        font-size: 14px;
+        color: rgba(66, 66, 66, 1)
       }
     }
   }
@@ -306,5 +328,64 @@
   p {
     margin: 0;
     font-size: 14px;
+  }
+}
+
+
+.LoggedSuccessfully {
+  font-weight: 600;
+  font-size: 12px;
+  color: rgba(36, 36, 36, 1);
+}
+
+.m-minus-t {
+  margin-bottom: -8px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: start;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+
+  input {
+    display: none;
+  }
+
+  .checkbox-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.insert-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #2d64c3;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  justify-content: center;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  margin: 12px 0px;
+  border-radius: 6px;
+
+  img {
+    width: 20px;
+    height: 20px;
   }
 }

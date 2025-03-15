@@ -59,6 +59,7 @@ const ExpandableTable = ({ source, headingText, headingfirst }) => {
       <div className="header">
         <span className="headerText">Type</span>
         <span className="headerText">Name</span>
+        <span className="headerText"></span>
       </div>
 
       {data.map((item) => (
@@ -83,11 +84,11 @@ const ExpandableTable = ({ source, headingText, headingfirst }) => {
           {item.expanded && (
             <div className="expandedContainer">
               <img src={tableIcon} alt="Table" className="tableIcon" />
-              <p className="infoText"><strong>Type:</strong> Table (Word-formatted)</p>
-              <p className="infoText"><strong>Sheet:</strong> {item.sheet}</p>
-              <p className="infoText"><strong>Workspace:</strong> {item.workspace}</p>
-              <p className="infoText"><strong>Name:</strong> {item.name}</p>
-              <p className="infoText"><strong>Last Update:</strong> {item.lastUpdate}</p>
+              <p className="infoText"><span>Type:</span> Table (Word-formatted)</p>
+              <p className="infoText"><span>Sheet:</span> {item.sheet}</p>
+              <p className="infoText"><span>Workspace:</span> {item.workspace}</p>
+              <p className="infoText"><span>Name:</span> {item.name}</p>
+              <p className="infoText"><span>Last Update:</span> {item.lastUpdate}</p>
             </div>
           )}
         </div>
