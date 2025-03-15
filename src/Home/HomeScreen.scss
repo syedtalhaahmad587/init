@@ -1,0 +1,176 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    padding: 20px; // Add padding to prevent elements sticking to edges
+    background-color: #f5f5f5;
+  }
+  
+  .loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid rgba(0, 0, 0, 0.1);
+      border-top-color: #0078d4;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    .loading-text {
+      margin-top: 10px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+  
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .error-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    .error-content {
+      display: flex;
+      // align-items: center;
+      background: rgba(253, 243, 244, 1);
+      padding: 15px;
+      border-radius: 8px;
+      .error-icon {
+        width: 20px;
+        margin-right: 10px;
+        height: 20px;
+      }
+      .error-text-container {
+        .error-title {
+          font-weight: 600;
+          color: rgba(36, 36, 36, 1);
+          display: flex
+          ;
+              margin: auto;
+        }
+        .error-message {
+          color: rgba(36, 36, 36, 1);
+          font-weight: 400;
+          // font-size: 12px;
+        }
+      }
+      .dismiss-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        .dismiss-icon {
+          width: 25px;
+          height: 25px;
+        }
+      }
+    }
+  }
+  
+  .main-content {
+    text-align: center;
+    // margin-top: 5rem;
+    .logo {
+      width: 100%;
+    }
+    .welcome-text {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .sub-text {
+      font-size: 18px;
+      color: #666;
+    }
+    .login-button {
+      display: flex;
+      align-items: center;
+      background: rgba(41, 92, 183, 1);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      // margin: auto;
+      font-weight: 600;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 1);
+      cursor: pointer;
+      .microsoft-icon {
+        width: 20px;
+        margin-right: 10px;
+      }
+    }
+  }
+  
+  .help-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    .help-icon {
+      width: 30px;
+      margin-right: 10px;
+    }
+    .help-title {
+      font-weight: bold;
+    }
+    .help-text {
+      color: #0078d4;
+      cursor: pointer;
+    }
+  }
+
+  
+  
+  .error-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 0; // Push to the top
+  }
+  
+  .main-content {
+    text-align: center;
+    flex-grow: 1; // Push content to center
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    .logo {
+      width: 50%;
+    }
+  
+    .welcome-text {
+      font-size: 28px;
+      color: rgba(36, 36, 36, 1);
+      font-weight: 600;
+      line-height: 0;
+    }
+  
+    .sub-text {
+      font-size: 18px;
+      color: rgba(66, 66, 66, 1);
+      font-weight: 400;
+    }
+  
+   
+  }
+  
+  .help-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0; // Push to bottom
+  }
+  
