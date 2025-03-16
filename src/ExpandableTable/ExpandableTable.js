@@ -35,7 +35,7 @@ const tableData = [
   },
 ];
 
-const ExpandableTable = ({ source, headingText, headingfirst }) => {
+const ExpandableTable = ({ source, headingText, headingfirst , className }) => {
   const [data, setData] = useState(tableData);
 
   const toggleExpand = (id) => {
@@ -51,7 +51,7 @@ const ExpandableTable = ({ source, headingText, headingfirst }) => {
       <div className="containerlink">
         <span className="text">{headingfirst}</span>
         <button className="updateButton">
-          <img src={source} alt="Update" className="icon" />
+          <img src={source} alt="Update" className={`icon  ${className}`} />
           <span className="updateText">{headingText}</span>
         </button>
       </div>

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./ExcelImport.scss";
-
 import DismissIcon from "../assets/images/Dismiss.png";
 import IconCheck from "../assets/images/IconCheck.png";
 import UserIcon from "../assets/images/user.png";
@@ -8,15 +7,17 @@ import NeedHelpIcon from "../assets/images/needHelp.png";
 import ArrowRightIcon from "../assets/images/ArrowRight.png";
 import Arrow_white_Import from "../assets/images/Arrow_white_Import.png";
 import UpdateIcon from "../assets/images/update.png";
+import TableSearch from "../assets/images/TableSearch.png";
 import MultiSelectDropdown from "../MultiSelectDropdown/MultiSelectDropdown";
 import CustomTabs from "../Tabs/CustomTabs";
 import ExpandableTable from "../ExpandableTable/ExpandableTable";
 import InsertIcon from "../assets/images/InsertIcon.png";
+import ArrowExport from "../assets/images/ArrowExport.png";
 import Checkactive from "../assets/images/checkactive.png";
 import Checkhover from "../assets/images/checkhover.png";
 import { useNavigate } from "react-router-dom";
 
-const ExcelImport = () => {
+const ExportExcel = () => {
     const [expandedRow, setExpandedRow] = useState(null);
     const [checked, setChecked] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -42,7 +43,7 @@ const ExcelImport = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-      navigate("/exportExcel");
+      navigate("/SignOutUser");
     }, 2000);
   };
 
@@ -62,14 +63,14 @@ const ExcelImport = () => {
       ) : (
         <>
       {/* Success Message */}
-      <div className="success-message">
+      {/* <div className="success-message">
         <img src={IconCheck} alt="Success" />
         <span className="LoggedSuccessfully" >Logged in successfully</span>
         <img src={DismissIcon} alt="Dismiss" className="dismiss-icon" />
-      </div>
+      </div> */}
 
       {/* User Info */}
-      <div className="user-info">
+      <div className="user-info" onClick={handleChange} >
         <img src={UserIcon} alt="User" className="user-icon" />
         <div className="user-details">
           <p className="user-name m-minus-t">Arlene McCoy</p>
@@ -80,51 +81,30 @@ const ExcelImport = () => {
 
       {/* Import Excel Content */}
       <div className="import-section">
-        <h2>Get Excel Content</h2>
-        <p>First submit content on Excel in order to successfully import it to Word</p>
-        <button className="import-btn" onClick={handleChange} >
+        <h2>Choose content to export</h2>
+        <p>Choose export sources</p>
+        {/* <button className="import-btn" onClick={handleChange} >
           <img src={Arrow_white_Import} alt="Import" />
           Import Excel Content
-        </button>
+        </button> */}
         <button className="update-btn">
-          <img src={UpdateIcon} alt="Update" />
-          Update
+          <img src={TableSearch} alt="Update" />
+          Detect Ranges
         </button>
         <p className="last-update">Last update: 14/02/2025, 15:29:31</p>
       </div>
 
       {/* Select Imported Items */}
-      <div className="imported-items">
-        <h2>Select Imported Items</h2>
-        <p>Insert new items or update already inserted</p>
-      </div>
-      <MultiSelectDropdown />
-      <CustomTabs />
-      <div className="button-container">
-      <label className="checkbox-container">
-        <input 
-          type="checkbox" 
-          checked={checked} 
-          onChange={() => setChecked(!checked)} 
-        />
-        <img 
-          src={checked ? Checkactive : Checkhover} 
-          alt="checkbox" 
-          className="checkbox-icon"
-        />
-        Use destination formatting
-      </label>
-
+     
+      <ExpandableTable  className="disabled_image" source="" headingfirst='Export list' />
       <button className="insert-button">
-        <img src={InsertIcon} alt="Insert Icon" />
-        Insert
+        <img src={ArrowExport} alt="Insert Icon" />
+        Export
       </button>
-    </div>
-      <ExpandableTable source={UpdateIcon} headingText='Update All' headingfirst='Linked fields table' />
       </>
     )}
     </div>
   );
 };
 
-export default ExcelImport;
+export default ExportExcel;
