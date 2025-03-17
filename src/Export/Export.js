@@ -123,7 +123,7 @@ const HandleFile = () => {
         Insert
       </button>
     </div>
-      <ExpandableTable source={UpdateIcon} headingText='Update All' headingfirst='Linked fields table' />
+      <ExpandableTable source={UpdateIcon} headingText='Update All' headingfirst='Linked fields table' className="" />
       </>
     )}
     </div>
