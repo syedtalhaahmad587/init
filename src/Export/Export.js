@@ -20,6 +20,7 @@ const ExcelImport = () => {
     const [expandedRow, setExpandedRow] = useState(null);
     const [checked, setChecked] = useState(false);
     const [loading, setLoading] = useState(false);
+    const [file, setfile] = useState('true');
     const navigate = useNavigate();
   const data = [
     {
@@ -45,7 +46,9 @@ const ExcelImport = () => {
       navigate("/exportExcel");
     }, 2000);
   };
-
+const HandleFile = () => {
+  setfile(!file)
+}
   const toggleRow = (index) => {
     setExpandedRow(expandedRow === index ? null : index);
   };
@@ -99,7 +102,7 @@ const ExcelImport = () => {
         <p>Insert new items or update already inserted</p>
       </div>
       <MultiSelectDropdown />
-      <CustomTabs />
+      <CustomTabs  files={file} />
       <div className="button-container">
       <label className="checkbox-container">
         <input 
@@ -115,7 +118,7 @@ const ExcelImport = () => {
         Use destination formatting
       </label>
 
-      <button className="insert-button">
+      <button className="insert-button" onClick={HandleFile} >
         <img src={InsertIcon} alt="Insert Icon" />
         Insert
       </button>

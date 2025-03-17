@@ -21,7 +21,8 @@ const tabData = {
   Images: "Images: Image1.png, Image2.png, Image3.png...",
 };
 
-const CustomTabs = () => {
+const CustomTabs = (files) => {
+  console.log(files , "files")
   const [activeTab, setActiveTab] = useState("All");
   const [isOpen, setIsOpen] = useState(false);
   const [selectedOptions, setSelectedOptions] = useState([]);
@@ -69,11 +70,20 @@ const [hoveredItem, setHoveredItem] = useState(null);
           </div>
         ))}
       </div>
-
+      {files.files ?
       <div className="search-bar">
         <img src={SearchIcon} alt="Search" className="search-icon" />
+       
         <input type="text" placeholder="Search" />
+        
+        
+        
       </div>
+      :
+      <div className="mt-tr" >
+      <input type="file" placeholder="Search " /> 
+      </div>
+      }
 
       <div className="tab-content">{tabData[activeTab]}</div>
       <div className="dropdown-container z_index" >
